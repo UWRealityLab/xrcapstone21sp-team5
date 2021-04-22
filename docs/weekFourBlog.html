@@ -135,7 +135,7 @@
 
           <h2 class="section-heading">Updates on Ideas</h2>
 
-          <p> Last Week Jasmine finished the <a href="https://www.figma.com/file/7XLSPEFDRDzaxYFFzJ6UHT/AR-MockUp?node-id=0%3A1" target="_blank">Figma</a> design and incorperated
+          <p> Last week Jasmine finished the <a href="https://www.figma.com/file/7XLSPEFDRDzaxYFFzJ6UHT/AR-MockUp?node-id=0%3A1" target="_blank">Figma</a> design and incorperated
         feedback from her groupmates earlier this week. Currently she is trying to reproduce all the models and get the magic leap 
         controllers to work  on glitch. Checkout a few pictures of the design or click the link to get a full view of Figma design</p>
 
@@ -153,6 +153,35 @@
               <span class="caption text-muted">The main gameplay</span>
           </p>
 
+          <p> In addition to designing, Jasmine has been trying to get the gameplay mechanics to work. She has googled some WebXR tutorials to gain inspiration and ideas for 
+            what she can pull into her team's project. She found this <a href="https://medium.com/samsung-internet-dev/making-an-ar-game-with-aframe-529e03ae90cb" target="_blank">Medium Article by Ada Rose Cannon</a>.
+          She tried integrating what was done in the article with Magic Leap components as a starting point but she is still trying to figure out how to make the controller responsive. </p>
+
+            <p>
+              <a href="#">
+                  <img class="img-fluid" src="img/adaBasketball.gif" alt="">
+                </a>
+                <span class="caption text-muted">Gameplay from the Medium article</span>
+            </p>
+            
+            <p>Yan has been looking into a few different libraries to help him get the physics components done. Here are a few resources...
+              <ul>
+                <li>
+                  <a href="https://medium.com/samsung-internet-dev/making-an-ar-game-with-aframe-529e03ae90cb" target="_blank">Link #1</a>
+                  <p>Allows us to set things as static (unaffected by gravity and collisions) and dynamic bodies (affected by gravity and collisions). And also set the physics for the whole environment to stimulate real world gravity. Also allows us to get collision contact points. </p>
+                </li>
+                <li>
+                  <a href="
+                  https://github.com/ngokevin/aframe-physics-components" target="_blank">Link #2</a>
+                  <p>Allows for more collision-specific details like the start and end contact points. </p>
+                </li>
+                <li>
+                  <a href="https://github.com/wmurphyrd/aframe-physics-extras" target="_blank">Link #3</a>
+                  <p>Allow setting collision forces to false, which is something we can do for the basketball hoop itself to make sure it does not move upon contact with the ball cause ideally it should be stable. </p>
+                </li>
+              </ul>
+
+            </p>
 
           <hr>
 
@@ -165,21 +194,22 @@
              </p>
            <p> Peter: 
                <ul>
-            <li>Get web server on GPU server</li>
-           <li> Get pose viewable on WebXR (magic leap) </li>
+            <li>Pose estimator</li>
+           <li> Setup python web server </li>
+           <li> Basic feedback working </li>
         </ul>
            </p>
-            <p>Yan: Work with Jasmine to incorporate the ball trajectory and rebounding function       </p>
-            <p>CJ: Try to connect these mock functions to the project. Maybe help other members if finish early.</p>
+            <p>Yan: Work with Jasmine and CJ to get the controller to work and incorporate the ball trajectory and rebounding function       </p>
+            <p>CJ: Get hoop model imported and get shots in bucket</p>
 
           <hr>
 
           
           <h2 class="section-heading">Blocking Issues</h2>
 
-          <p> Currently Jasmine's blocking issue is the lack of resources to help her develop a game in AR.
-              She has found many resources to build AR games in Unity and AR games that are supported through 
-              Andriod applications. She is having a hard time getting started and making the gameplay mechanics </p>
+          <p> Currently Jasmine is having a hard time getting started and making the gameplay mechanics the lack of resources to help her develop an AR game in WebXR.
+            She has found many resources to build AR games in Unity and AR games that are supported for Andriod applications. 
+            Ultimately, she is having trouble ramping up on JavaScript and HTML/CSS skills and getting the Magic Leap Controller to be responsive. </p>
      
           <p>Yan is facing an issue where the physics library is not comprehensive/ lack of documentation.
               One thing that we wish to do is show the trajectory of the ball but the physics library we intend to use
