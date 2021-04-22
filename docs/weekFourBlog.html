@@ -15,8 +15,11 @@
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
   <link href="css/clean-blog.min.css" rel="stylesheet">
@@ -25,12 +28,14 @@
 
 <body>
 
-  
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="index.html">BallARs</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
       </button>
@@ -75,42 +80,46 @@
           <br>
           <h4>CJ Lin: </h4>
 
-          <p> <ul>
-              <li> Talked to Peter about how to give feedback to the users with the pose information we have.</li>
-              <li> Talked to Yan about what information from the physics engine we can use for feedback.</li>
-              <li> Wrote mock functions that take in potential information for feedback, and return text feedback. </li>
+          <p>
+          <ul>
+            <li> Talked to Peter about how to give feedback to the users with the pose information we have.</li>
+            <li> Talked to Yan about what information from the physics engine we can use for feedback.</li>
+            <li> Wrote mock functions that take in potential information for feedback, and return text feedback. </li>
           </ul>
-            </p>
+          </p>
 
           <p>Milestone for Week 4: Measure key points and analyze data from the team to develop a feedback algorithm</p>
 
           <h4>Peter Michael: </h4>
-          
-          <p> <ul>
+
+          <p>
+          <ul>
             <li> Connected the webcam to the GPU server (+ web server)</li>
             <li> Got pose estimation working on GPU server</li>
-        </ul>
+          </ul>
           </p>
 
-          <p>Milestone for Week 4:  Do the networking with the AR Headset</p>
+          <p>Milestone for Week 4: Do the networking with the AR Headset</p>
 
           <h4>Yan Zhe Ong: </h4>
 
-          <p> <ul>
+          <p>
+          <ul>
             <li> Looked up existing A-frame physics libraries</li>
             <li> Looked at the A-frame physics possibilities as well as code examples</li>
-        </ul>
+          </ul>
           </p>
 
           <p>Milestone for Week 4:Understand the chosen physics library</p>
 
           <h4>Jasmine Woon: </h4>
 
-          <p> <ul>
+          <p>
+          <ul>
             <li> Searched for A-Frame examples for menu screens/ pop-up screens and how to make games in AR</li>
             <li> Follow mock up and place elements </li>
             <li> Tried to get the controller to work </li>
-        </ul>
+          </ul>
           </p>
 
           <p>Milestone for Week 4: Follow mock up design and place models in an environment </p>
@@ -120,103 +129,122 @@
           <h2 class="section-heading">Updates on Code</h2>
 
           <p> Currently the GitHub is only has the website code. We have a glitch project
-              that was shared to everyone on the team. Currently the main glitch project
-              has code from our rapid prototype. To simulate branches and testing, everyone 
-              has their own glitch project to manipulate before adding on to the main 
-              glitch project.
+            that was shared to everyone on the team. Currently the main glitch project
+            has code from our rapid prototype. To simulate branches and testing, everyone
+            has their own glitch project to manipulate before adding on to the main
+            glitch project.
           </p>
 
           <p> Orginally, we planned on using our laptop's GPU to process the pose estimation.
-              However, Peter found out that our results gave us frames that were 15fps which
-              was not ideal for when we do retargetting in the future. So we decided to a get
-              access to a lab machine to get better results when we run our GPU  </p>
+            However, Peter found out that our results gave us frames that were 15fps which
+            was not ideal for when we do retargetting in the future. So we decided to a get
+            access to a lab machine to get better results when we run our GPU </p>
+
+          <p>Yan has been looking into a few different libraries to help him get the physics components done. Here are a
+            few resources...
+          <ul>
+            <li>
+              <a href="https://medium.com/samsung-internet-dev/making-an-ar-game-with-aframe-529e03ae90cb"
+                target="_blank">Link #1</a>
+              <p>Allows us to set things as static (unaffected by gravity and collisions) and dynamic bodies (affected
+                by gravity and collisions). And also set the physics for the whole environment to stimulate real world
+                gravity. Also allows us to get collision contact points. </p>
+            </li>
+            <li>
+              <a href="
+                    https://github.com/ngokevin/aframe-physics-components" target="_blank">Link #2</a>
+              <p>Allows for more collision-specific details like the start and end contact points. </p>
+            </li>
+            <li>
+              <a href="https://github.com/wmurphyrd/aframe-physics-extras" target="_blank">Link #3</a>
+              <p>Allow setting collision forces to false, which is something we can do for the basketball hoop itself to
+                make sure it does not move upon contact with the ball cause ideally it should be stable. </p>
+            </li>
+          </ul>
+
+          </p>
 
           <hr>
 
           <h2 class="section-heading">Updates on Ideas</h2>
 
-          <p> Last week Jasmine finished the <a href="https://www.figma.com/file/7XLSPEFDRDzaxYFFzJ6UHT/AR-MockUp?node-id=0%3A1" target="_blank">Figma</a> design and incorperated
-        feedback from her groupmates earlier this week. Currently she is trying to reproduce all the models and get the magic leap 
-        controllers to work  on glitch. Checkout a few pictures of the design or click the link to get a full view of Figma design</p>
+          <p> Last week Jasmine finished the <a
+              href="https://www.figma.com/file/7XLSPEFDRDzaxYFFzJ6UHT/AR-MockUp?node-id=0%3A1" target="_blank">Figma</a>
+            design and incorperated
+            feedback from her groupmates earlier this week. Currently she is trying to reproduce all the models and get
+            the magic leap
+            controllers to work on glitch. Checkout a few pictures of the design or click the link to get a full view of
+            Figma design</p>
 
           <p>
             <a href="#">
-                <img class="img-fluid" src="img/figmaMenu.png" alt="">
-              </a>
-              <span class="caption text-muted">The main menu screen</span>
+              <img class="img-fluid" src="img/figmaMenu.png" alt="">
+            </a>
+            <span class="caption text-muted">The main menu screen</span>
           </p>
-          
+
           <p>
             <a href="#">
-                <img class="img-fluid" src="img/figmaGameplay.png" alt="">
-              </a>
-              <span class="caption text-muted">The main gameplay</span>
+              <img class="img-fluid" src="img/figmaGameplay.png" alt="">
+            </a>
+            <span class="caption text-muted">The main gameplay</span>
           </p>
 
-          <p> In addition to designing, Jasmine has been trying to get the gameplay mechanics to work. She has googled some WebXR tutorials to gain inspiration and ideas for 
-            what she can pull into her team's project. She found this <a href="https://medium.com/samsung-internet-dev/making-an-ar-game-with-aframe-529e03ae90cb" target="_blank">Medium Article by Ada Rose Cannon</a>.
-          She tried integrating what was done in the article with Magic Leap components as a starting point but she is still trying to figure out how to make the controller responsive. </p>
+          <p> In addition to designing, Jasmine has been trying to get the gameplay mechanics to work. She has googled
+            some WebXR tutorials to gain inspiration and ideas for
+            what she can pull into her team's project. She found this <a
+              href="https://medium.com/samsung-internet-dev/making-an-ar-game-with-aframe-529e03ae90cb"
+              target="_blank">Medium Article by Ada Rose Cannon</a>.
+            She tried integrating what was done in the article with Magic Leap components as a starting point but she is
+            still trying to figure out how to make the controller responsive. </p>
 
-            <p>
-              <a href="#">
-                  <img class="img-fluid" src="img/adaBasketball.gif" alt="">
-                </a>
-                <span class="caption text-muted">Gameplay from the Medium article</span>
-            </p>
-            
-            <p>Yan has been looking into a few different libraries to help him get the physics components done. Here are a few resources...
-              <ul>
-                <li>
-                  <a href="https://medium.com/samsung-internet-dev/making-an-ar-game-with-aframe-529e03ae90cb" target="_blank">Link #1</a>
-                  <p>Allows us to set things as static (unaffected by gravity and collisions) and dynamic bodies (affected by gravity and collisions). And also set the physics for the whole environment to stimulate real world gravity. Also allows us to get collision contact points. </p>
-                </li>
-                <li>
-                  <a href="
-                  https://github.com/ngokevin/aframe-physics-components" target="_blank">Link #2</a>
-                  <p>Allows for more collision-specific details like the start and end contact points. </p>
-                </li>
-                <li>
-                  <a href="https://github.com/wmurphyrd/aframe-physics-extras" target="_blank">Link #3</a>
-                  <p>Allow setting collision forces to false, which is something we can do for the basketball hoop itself to make sure it does not move upon contact with the ball cause ideally it should be stable. </p>
-                </li>
-              </ul>
+          <p>
+            <a href="#">
+              <img class="img-fluid" src="img/adaBasketball.gif" alt="">
+            </a>
+            <span class="caption text-muted">Gameplay from the Medium article</span>
+          </p>
 
-            </p>
+
 
           <hr>
 
           <h2 class="section-heading">Plan for Next Week</h2>
 
           <p>Here are a couple of milestones that everyone plans on doing</p>
-     
+
           <p> Jasmine: Getting the controller working so that user can shoot basketballs
             feedback text and if time add audio feedback feature
-             </p>
-           <p> Peter: 
-               <ul>
+          </p>
+          <p> Peter:
+          <ul>
             <li>Pose estimator</li>
-           <li> Setup python web server </li>
-           <li> Basic feedback working </li>
-        </ul>
-           </p>
-            <p>Yan: Work with Jasmine and CJ to get the controller to work and incorporate the ball trajectory and rebounding function       </p>
-            <p>CJ: Get hoop model imported and get shots in bucket</p>
+            <li> Setup python web server </li>
+            <li> Basic feedback working </li>
+          </ul>
+          </p>
+          <p>Yan: Work with Jasmine and CJ to get the controller to work and incorporate the ball trajectory and
+            rebounding function </p>
+          <p>CJ: Get hoop model imported and get shots in bucket</p>
 
           <hr>
 
-          
+
           <h2 class="section-heading">Blocking Issues</h2>
 
-          <p> Currently Jasmine is having a hard time getting started and making the gameplay mechanics the lack of resources to help her develop an AR game in WebXR.
-            She has found many resources to build AR games in Unity and AR games that are supported for Andriod applications. 
-            Ultimately, she is having trouble ramping up on JavaScript and HTML/CSS skills and getting the Magic Leap Controller to be responsive. </p>
-     
+          <p> Currently Jasmine is having a hard time getting started and making the gameplay mechanics the lack of
+            resources to help her develop an AR game in WebXR.
+            She has found many resources to build AR games in Unity and AR games that are supported for Andriod
+            applications.
+            Ultimately, she is having trouble ramping up on JavaScript and HTML/CSS skills and getting the Magic Leap
+            Controller to be responsive. </p>
+
           <p>Yan is facing an issue where the physics library is not comprehensive/ lack of documentation.
-              One thing that we wish to do is show the trajectory of the ball but the physics library we intend to use
-              does not support that idea, so we need to find a work around.
+            One thing that we wish to do is show the trajectory of the ball but the physics library we intend to use
+            does not support that idea, so we need to find a work around.
           </p>
 
-          
+
         </div>
       </div>
     </div>
