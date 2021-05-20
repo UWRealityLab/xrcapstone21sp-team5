@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Team 5 AR Blog</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">BallARs</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="team.html">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/blog5banner.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>7th Blog</h1>
+            <span class="subheading">Recap of Week Eight: May 13th, 2021, 2021 - May 20th, 2021</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+          <h2 class="section-heading">Everyone's Progress</h2>
+
+          <h4>CJ Lin: </h4>
+
+          <p>
+          <ul>
+            <li> Added an overlay of instructions on how to play</li>
+            <li> Adjusted feedback algorithm to give feedback when hoop moves position</li>
+          </ul>
+          </p>
+
+
+          <h4>Peter Michael: </h4>
+
+          <p>
+          <ul>
+            <li> Understood how SMPL model works ang got VIBE algorithm to work</li>
+          </ul>
+          </p>
+
+          <h4>Yan Zhe Ong: </h4>
+
+          <p>
+          <ul>
+            <li> Worked with Jasmine develop a better shooting mechanics that takes the last 20 frames</li>
+            <li> Attempted to make move hoop more smooth and move real time </li>
+          </ul>
+          </p>
+
+
+          <h4>Jasmine Woon: </h4>
+
+          <p>
+          <ul>
+            <li> Worked with Yan develop a better shooting mechanics that takes the last 20 frames</li>
+            <li> Attempted to make move hoop more smooth and move real time </li>
+          </ul>
+          </p>
+
+
+          <hr>
+
+          <h2 class="section-heading">Updates on Code</h2>
+
+          <p> CJ has spent time working on the overlay for BallARs. The reason we added an overlay, so that user
+            can recieve information on how the game works before entering AR world. We opted for this option because
+            our previous menu overlay had little functionality and wasn't necessary to add another button press. We also
+            thought that adding a an extra window for the instructions in AR world would obstruct the user's ability to 
+            shoot a ball anywhere, so we decided for our current design. 
+          </p>
+
+          <p>
+            <a href="#">
+              <img class="img-fluid" src="img/overlay.png" alt="overlay">
+            </a>
+            <span class="caption text-muted">Overlay with instructions</span>
+          </p>
+
+          <p> Peter has been working furiously trying to understand 
+            <a href="https://github.com/mkocabas/VIBE"
+            target="_blank">VIBE algorithm</a> and implmenting it. He got a simple video clip to work of 
+            Steph Curry shooting a free throw basket. He has also gone to Luyang's office hours to get
+            help on this algorithm and understand how SMPL body model files work.
+          </p>
+
+          <p>
+            <a href="#">
+              <img class="img-fluid" src="img/vibe.gif" alt="overlay">
+            </a>
+            <span class="caption text-muted">Overlay with instructions</span>
+          </p>
+
+          <p> Jasmine and Yan has been working on shooting and now the shoot mechanism are less buggy. They took the 
+          average of the last 20 frames to get a velocity in the x, y, and z direction. Though the shooting isn't a real
+          semblance to real life shooting, it's the closest they can get to simulating throwing a basketball in VR.
+          </p>
+
+          <hr>
+
+          <h2 class="section-heading">Updates on Ideas</h2>
+
+          <p> BallARs has reached the point in the quarter where CSE 481V has become less busy. As a result, they can 
+            focus more on their time on coding BallARs. We have about 1.5 more weeks to go, and everything seems to be
+            going on track. We are cautiously optimistic that we can achieve our target product.
+          </p>
+
+          <p>
+            <a href="#">
+              <img class="img-fluid" src="img/glitchHours2.png" alt="overlay">
+            </a>
+            <span class="caption text-muted">Many hours going BallARs this month seen on glitch</span>
+          </p>
+
+
+          <p> With things seemingly on-track, BallARs have been thinking of trying to implement stretch goals 
+            such as adding croquet to gamify the BallARs experience. 
+          </p>
+
+
+          <hr>
+
+          <h2 class="section-heading">Plan for Next Week</h2>
+
+          <h4>CJ Lin: </h4>
+
+          <p> Goals for Monday 5/24
+          <ul>
+            <li> Work with Peter to incorperate better feedback from pose estimation</li>
+          </ul>
+          </p>
+
+
+          <h4>Peter Michael: </h4>
+
+          <p> Goals for Monday 5/24
+          <ul>
+            <li> Implement retargeting model from SMPL files</li>
+          </ul>
+          </p>
+
+
+
+
+          <h4>Yan Zhe Ong: </h4>
+
+          <p> Goals for Monday 5/24
+          <ul>
+            <li> Work with Jasmine to get a better move hoop mechanism</li>
+            <li> start working on croquet</li>
+          </ul>
+          </p>
+
+
+
+          <h4>Jasmine Woon: </h4>
+
+          <p> Goals for Monday 5/24
+          <ul>
+            <li> Work with Yan to get a better move hoop mechanism</li>
+            <li> start working on croquet</li>
+          </ul>
+          </p>
+
+          <hr>
+
+
+          <h2 class="section-heading">Blocking Issues</h2>
+          <p> One blocking issue that Jasmine and Yan are facing is how to update the position of the hoop real time. 
+            Currently, they have a tick function that checks the controller's old position and current position. Then,
+            using those two positions, calculate the change for the new hoop's position. However, they are encountering 
+            a behavior where the controller's old position and current position are the same each tick. They need a way
+            to get two different position in order to work. See their attempt <a href="https://glitch.com/edit/#!/rebel-brass-fuschia?path=moveHoop.js%3A1%3A0"
+            target="_blank">here</a>.
+          </p>
+          <p> CJ is trying to figure out how to handle the case when the user throws an air ball. He hasn't come up with a
+            solution just yet but he's working on it!
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://github.com/UWRealityLab/xrcapstone21sp-team5">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; BallARs 2021</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!--Extra Blog stuff-->
+
+  <!-- Image and captionering 
+    <a href="#">
+      <img class="img-fluid" src="img/post-sample-image.jpg" alt="">
+    </a>
+    <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+      -->
+
+  <!-- block quote
+          <blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+          -->
