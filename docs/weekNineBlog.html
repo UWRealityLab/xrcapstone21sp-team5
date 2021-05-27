@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Team 5 AR Blog</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">BallARs</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="team.html">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/blog5banner.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>8th Blog</h1>
+            <span class="subheading">Recap of Week Nine: May 20th, 2021, 2021 - May 27th, 2021</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+          <h2 class="section-heading">Everyone's Progress</h2>
+
+          <h4>CJ Lin: </h4>
+
+          <p>
+          <ul>
+            <li> Attempted to implement invisible walls for in-game feedback</li>
+            <li> Looked into getting BallARs application to work in VR</li>
+            <li> Working with Peter and Luyang to implement 3D model feedback</li>
+          </ul>
+          </p>
+
+
+          <h4>Peter Michael: </h4>
+
+          <p>
+          <ul>
+            <li> Successfully implemented retargeting by modifying VIBE code </li>
+            <li> Working with CJ and Luyang to implement 3D model feedback</li>
+          </ul>
+          </p>
+
+          <h4>Yan Zhe Ong: </h4>
+
+          <p>
+          <ul>
+            <li> Refactored the current shooting mechanism and fine tune variables</li>
+          </ul>
+          </p>
+
+
+          <h4>Jasmine Woon: </h4>
+
+          <p>
+          <ul>
+            <li> Designed and added the new overlay</li>
+            <li> Successfully implemented hoop reposition that allows for real time tracking of the controller </li>
+          </ul>
+          </p>
+
+
+          <hr>
+
+          <h2 class="section-heading">Updates on Code</h2>
+
+          <p> CJ and Peter have been working hard to implement feedback from 3D pose estimation. They have been going to 
+            Luyang's office hours and collobrating together. The current code will record the user's actions when they start and stop shooting.
+            To trigger the recording, an HTTP request is sent to the GPU when the player starts and stops shooting. Next, the GPU will run the 
+            VIBE algorithm and showcase a 3D model that minics the player's movements. 
+          </p>
+
+          <p> Yan spent time refactoring code on shooting and attempting to solve complex kinematics equations. In addition, 
+            the shooting mechanism no longer takes in 20 frame and instead uses 5 frames. There's little improvement to the 
+            shooting mechanism but we think this method is slightly better than our last shooting algorithm. 
+          </p>
+
+          <p> This past week Jasmine has been looking at shooting and moving the hoop more smoothly. She spent most of her 
+            efforts on trying to get the hoop to move smoothly. Look how smooth moving the hoop has become!
+            </p>
+
+            <p>
+              <iframe src="https://drive.google.com/file/d/1e9r4W2NPjCpQXobdU5M2fO6-wzgxqsT9/preview" width="640" height="480"></iframe>
+              <span class="caption text-muted">Moving hoop</span>
+            </p>
+
+          <hr>
+
+          <h2 class="section-heading">Updates on Ideas</h2>
+
+          <p>  Originally, we planned to make a main menu page. However, after re-evaluating on the design and functionality, 
+            our menu did not serve a good purpose. So we decided to go with the overlay approach instead. 
+            Jasmine spent time this weekend to design a new overlay. Check it our below </p>
+            <p>
+              <a href="#">
+                <img class="img-fluid" src="img/overlay.png" alt="overlay">
+              </a>
+              <span class="caption text-muted">Old Overlay Designed by CJ</span>
+            </p>
+
+          <p>
+            <a href="#">
+              <img class="img-fluid" src="img/Instructions.png" alt="overlay">
+            </a>
+            <span class="caption text-muted"> New Instructions Overlay Designed by Jasmine </span>
+          </p>
+
+
+          <p> We have less than a week to go and BallARs are trying to warp up!  </p>
+
+
+          <hr>
+
+          <h2 class="section-heading">Plan for Next Week</h2>
+
+          <h4>Everyone: </h4>
+          <p>
+            <ul>
+              <li> Start integrating and test all components before shooting a video next thursday.</li>
+            </ul>
+          </p>
+
+          <h4>CJ Lin: </h4>
+
+          <p> Goals for Monday 5/31
+          <ul>
+            <li> Work with Peter to add feedback from the 3D pose estimation </li>
+            <li> Place mesh into the AR enviroment</li>
+          </ul>
+          </p>
+
+
+          <h4>Peter Michael: </h4>
+
+          <p> Goals for Monday 5/31
+          <ul>
+            <li> Work with CJ to add feedback from the 3D pose estimation </li>
+            <li> Place mesh into the AR enviroment</li>
+          </ul>
+        </p>
+
+
+
+          <h4>Yan Zhe Ong: </h4>
+
+          <p> Goals for Monday 5/31
+          <ul>
+            <li> Continue to fine tune the shooting mechanism</li>
+          </ul>
+          </p>
+
+
+
+          <h4>Jasmine Woon: </h4>
+
+          <p> Goals for Monday 5/31
+          <ul>
+            <li> Work with getting more precise feedback based on in-game physics</li>
+            <li> If there's time add animations when a ball gets shot into the hoop</li>
+          </ul>
+          </p>
+
+          <hr>
+
+
+          <h2 class="section-heading">Blocking Issues</h2>
+          <p> One blocking issue we have is how can we test our application for a quest or hololens device. CJ looked into 
+            playing BallARs on a Quest2 but he wasn't able to shoot a basketball. Though this is not a huge concern for us because
+            we have been heavily using Magic Leap Device, we wondered how did VR teams from MVP day played our application.
+             </p>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://github.com/UWRealityLab/xrcapstone21sp-team5">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; BallARs 2021</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!--Extra Blog stuff-->
+
+  <!-- Image and captionering 
+    <a href="#">
+      <img class="img-fluid" src="img/post-sample-image.jpg" alt="">
+    </a>
+    <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+      -->
+
+  <!-- block quote
+          <blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+          -->
