@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+  <!--  attach.js    -->
+  <script src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2Fattach.js?v=1622741769394"></script>
+  <!-- trigger.js      -->
+  <script src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2Ftrigger.js?v=1622741786062"></script>
+  <!-- pose.js -->
+  <script src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2Fpose.js?v=1620085311553"></script>
+  <!-- moveHoop.js      -->
+  <script src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2FmoveHoop.js?v=1622741778757"></script>
+  <!-- trackHoop.js -->
+  <script src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2FtrackHoop.js?v=1622741797039"></script>
+  <!-- disable-culling.js -->
+  <script src="https://cdn.glitch.com/58cb9d2e-84f7-4b7a-946b-9e8745663099%2Fdisable-culling.js?v=1622665138750"></script>
+
+  <title>BallARs</title>
+
+  <style>
+    .overlay-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      background: #666666;
+      opacity: 1;
+      z-index: 1000;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  </style>
+
+</head>
+
+<body>
+  
+  <div class="overlay-box">
+    <img src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2FInstructions%20(1).png?v=1622684699320"
+      width="1000">
+  </div>
+
+
+  <a-scene cursor="rayOrigin: mouse" physics="debug: false; restitution: 0.5; gravity: -9.8" raycaster="objects: .link">
+
+    <a-assets>
+      <a-asset-item id="ball"
+        src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2Fbasketball%20(1).glb?v=1620865011876">
+      </a-asset-item>
+      <a-asset-item id="hoop-obj"
+        src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2FBasketball_Hoop_obj_base.obj?v=1620011015910">
+      </a-asset-item>
+      <a-asset-item id="hoop-mtl"
+        src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2FBaksetball_Hoop_obj_base.mtl?v=1620012749142">
+      </a-asset-item>
+
+      <a-assest-item id="confetti" response-type="arraybuffer"
+        src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2Fout.glb?v=1622433545579"></a-assest-item>
+      <a-assest-item id="arrow"
+        src="https://cdn.glitch.com/0eb272ba-79fc-4fb2-a347-c99c79f83ab4%2Farrow.glb?v=1622406481886"></a-assest-item>
+    </a-assets>
+
+    <!-- magic leap controller      -->
+    <a-entity id="controller" magicleap-controls="hand: right; model: false" rotation-reader trigger move-hoop track-hoop></a-entity>
+
+    <a-entity id="basketball" visible="true" gltf-model="#ball" scale=".32 .32 .32"></a-entity>
+
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="8" height="8" material="opacity: 0.0; transparent: true"
+      static-body></a-plane>
+
+      <!-- Confetti glb credits
+      Model Information:
+      * title:	Confetti
+      * source:	https://sketchfab.com/3d-models/confetti-b442e6fc171443138a919fdc90f24654
+      * author:	jhsuuu (https://sketchfab.com/jhsuuu)
+
+      Model License:
+      * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+      * requirements:	Author must be credited. Commercial use is allowed. -->
+    <a-entity id="win" visible="false" gltf-model="#confetti" position="0 3 -4" animation-mixer></a-entity>
+    <a-entity id="pointer" visible="true" gltf-model="#arrow" position="2 0 -2" scale="0.01 0.01 0.01"
+      rotation="180 90 90"></a-entity>
+
+      <a-entity id="hoop" position="0 3 -4">
+        <a-entity obj-model="obj: #hoop-obj; mtl: #hoop-mtl" rotation="270 180 90" scale="0.01 0.01 0.01"></a-entity>
+      
+        <a-plane id="backboard" width="2" height="1.1" position="0 1 -0.3" static-body visible="false"></a-plane>
+        
+        <a-torus id="rim" scale="0.7 0.7 0.7" static-body="shape: mesh;" position="0 0.6 0.1.5" 
+                 visible="false" radius="0.27" radius-tubular="0.01" rotation="90 0 0"
+                 geometry="radius: 0.35; segmentsRadial: 5; segmentsTubular: 8">
+        </a-torus>
+        
+        <a-entity id="detector" geometry="primitive: cylinder; height: 0.001; radius: 0.2" static-body
+                  collision-filter="collisionForces: false" visible="false"
+                  rotation="0 0 0" position="0 0.4 0.1" physics-collider></a-entity>
+        
+        <a-entity id="3DModel" scale="1 1 1" position= "-1 -2 -4" animation-mixer></a-entity>
+        
+        <a-box id="backboard-left" depth="0.001" height="20" width="20" visible="false" static-body position="-10 0 -0.1" physics-collider collision-filter="collisionForces: false"></a-box>
+        <a-box id="backboard-right" depth="0.001" height="20" width="20" visible="false" static-body position="10 0 -0.1" physics-collider collision-filter="collisionForces: false"></a-box>
+        <a-box id="backboard-up" depth="0.001" height="20" width="20" visible="false" static-body position="0 10.9 -0.1" physics-collider collision-filter="collisionForces: false"></a-box>
+        <a-box id="backboard-down" depth="0.001"  height="20" width="20" visible="false" static-body position="0 -9.8 -0.1" physics-collider collision-filter="collisionForces: false"></a-box>
+      
+        <a-entity id="feedback"
+                      visible="true"
+                      geometry="primitive: plane; width: 0.35; height: 0.2;"
+                      material="color: #99835c"
+                      text="value: Give it a shot! Your feedback will appear here afterward.; 
+                            color: black; width: 0.4; height: 1.33; align: center; wrapCount: 30"
+                      position="0.6 0 0">
+        </a-entity>
+      
+      </a-entity>
+
+    <a-entity id="rig">
+      <a-entity id="camera" camera position="0 2 0" look-controls="false" wasd-controls></a-entity>
+    </a-entity>
+  </a-scene>
+</body>
+
+</html>
