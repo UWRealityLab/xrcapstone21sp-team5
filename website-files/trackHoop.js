@@ -14,12 +14,13 @@ AFRAME.registerComponent("track-hoop", {
             this.hoop.object3D.getWorldPosition(this.hoopPosition);
             this.pointerPosition = new THREE.Vector3();
             this.pointer.object3D.getWorldPosition(this.pointerPosition);
+
             if (this.hoopPosition.x - this.pointerPosition.x > 0) {
-                this.pointer.object3D.rotation.set(0, 90, 90); // hoop is to the right
+                this.pointer.object3D.rotation.set(0, Math.PI / 2, Math.PI / 2); // hoop is to the right
             } else if ((this.hoopPosition.x - this.pointerPosition.x >= -0.25) && (this.hoopPosition.x - this.pointerPosition.x <= 0.25)) {
-                this.pointer.object3D.rotation.set(-90, 0, 0); // hoop is up
+                this.pointer.object3D.rotation.set(-Math.PI / 2, 0, 0); // hoop is up
             } else {
-                this.pointer.object3D.rotation.set(0, -90, -90); // hoop is to the left
+                this.pointer.object3D.rotation.set(0, -Math.PI / 2, -Math.PI / 2); // hoop is to the left
             }
         };
 

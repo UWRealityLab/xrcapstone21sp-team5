@@ -19,15 +19,21 @@ AFRAME.registerComponent("move-hoop", {
                     oldPos.y + (e.detail.controllerPosition.y - oldControl.y) * 5,
                     oldPos.z + (e.detail.controllerPosition.z - oldControl.z) * 5
                 );
-                this.newRotation = new THREE.Quaternion();
-                this.control.object3D.getWorldQuaternion(this.newRotation);
 
-                this.hoop.object3D.quaternion.set(
-                    this.newRotation.x,
-                    e.detail.controllerRotation.y,
-                    this.newRotation.z,
-                    this.newRotation.w,
-                );
+                this.camera = document.getElementById("camera");
+                var cameraPos = new THREE.Vector3();
+                this.camera.object3D.getWorldPosition(cameraPos);
+                console.log("camera pos: ", cameraPos);
+
+                this.hoop = document.getElementById("hoop");
+                var hoopPos = new THREE.Vector3();
+                this.hoop.object3D.getWorldPosition(hoopPos);
+
+                let deltaZ = hoopPos.z - cameraPos.z;
+                let deltaX = hoopPos.x - cameraPos.x;
+                let theta = -1 * Math.atan(deltaZ / deltaX);
+
+                this.hoop.object3D.rotation.set(0, theta * 2 + Math.PI, 0);
             }
         };
 
