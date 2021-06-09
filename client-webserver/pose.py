@@ -30,46 +30,6 @@ def record_frames(reciever, client_addr, state_dict):
         i += 1
 
 """
-    Given the image sequence, generate the glb file, return it
-"""
-def gen_poses(client_addr):
-    client_dir = os.path.join(TMP_BASE_DIR, client_addr)
-    
-    output_path = os.path.join(client_dir, 'output/')
-    thetas_path = os.path.join(output_path, 'thetas/')
-    glb_path = os.path.join(output_path, 'out.glb')
-    
-    try:
-        os.makedirs(output_path)
-    except:
-        pass    
-    
-    vibe_cmd = f"python {os.path.join(VIBE_DIR, 'demo_alter.py')} --client_dir {client_dir} --no_render"
-    os.system(vibe_cmd) # gen vibe results
-    
-    """ SMPL model """
-    # glb_cmd = f"python {os.path.join(vibe_path, 'lib/utils/fbx_output.py')} --input {os.path.join(client_dir, 'output/vibe_output.pkl')} --output {os.path.join(client_dir, 'output/glb_output.glb')} --fps_source 30 --fps_target 30 --gender male --person_id 3"
-    
-    
-    theta_paths = os.listdir(thetas_path)
-    
-    if len(theta_paths) == 0:
-        return
-    
-    theta_path = os.path.join(thetas_path, theta_paths[0])
-    
-    """ 2K model """
-    glb_cmd = f"python {os.path.join(TK_DIR, 'save_gltf.py')} --theta_path {theta_path} --output_path {glb_path}"
-    os.system(glb_cmd) # gen glb
-    
-    # read glb (binary)
-    with open(glb_path, 'rb') as f:
-        glb = f.read()
-        
-    # return glb file
-    return glb
-
-"""
     Convert the image sequence to an mp4
 """
 def client_frames_to_mp4(client_addr):

@@ -26,10 +26,9 @@ def add_header(r):
 def index():
     return render_template('index.html')
 
-
 @app.route('/trigger_start')
 def trigger_start():
-    if request.remote_addr in state_dict and (ServerStates.END_VIDEO not in state_dict[request.remote_addr] or ServerStates.END_GLB not in state_dict[request.remote_addr]):
+    if request.remote_addr in state_dict and ServerStates.END_VIDEO not in state_dict[request.remote_addr]:
         return ('', 204) # empty response (OK)
     state_dict[request.remote_addr] = set([ServerStates.RECORDING]) # start recording
     record_frames(reciever, request.remote_addr, state_dict)
@@ -45,17 +44,4 @@ def trigger_end_video():
         abort(500) # images not found for example
     return vid
 
-@app.route('/trigger_end')
-def trigger_end():
-    if ServerStates.START_GLB in state_dict[request.remote_addr]:
-        return ('', 204)
-    state_dict[request.remote_addr].add(ServerStates.START_GLB)
-    state_dict[request.remote_addr].discard(ServerStates.RECORDING) # stop recording, process, and send back gltf
-    glb = gen_poses(request.remote_addr)
-    state_dict[request.remote_addr].add(ServerStates.END_GLB)
-    if glb is None:
-        abort(500) # error creating glb
-    return glb
-
 app.run(host=SERVER_ADDR, port=WEB_PORT, ssl_context='adhoc')
-
