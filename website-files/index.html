@@ -14,7 +14,7 @@
   <!--  attach.js    -->
   <script src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2Fattach.js?v=1622923465820"></script>
   <!-- trigger.js      -->
-  <script src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2Ftrigger.js?v=1622777318526"></script>
+  <script src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2Ftrigger.js?v=1623050977565"></script>
   <!-- pose.js -->
   <script src="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2Fpose.js?v=1620085311553"></script>
   <!-- moveHoop.js      -->
@@ -25,6 +25,7 @@
   <script src="https://cdn.glitch.com/58cb9d2e-84f7-4b7a-946b-9e8745663099%2Fdisable-culling.js?v=1622665138750"></script>
 
   <title>BallARs</title>
+  <link rel="icon" href="https://cdn.glitch.com/9a85a046-7a8a-4e1a-a03f-9054d9632e5c%2FBallARsLogo.png?v=1623048492155">
 
   <style>
     .overlay-box {
@@ -71,11 +72,11 @@
     </a-assets>
 
     <!-- magic leap controller      -->
-    <a-entity id="controller" magicleap-controls="hand: right; model: false" rotation-reader trigger move-hoop track-hoop></a-entity>
+    <a-entity id="controller" magicleap-controls="hand: right; model: false" oculus-touch-controls="hand: right" rotation-reader trigger move-hoop track-hoop></a-entity>
 
     <a-entity id="basketball" visible="true" gltf-model="#ball" scale=".32 .32 .32"></a-entity>
 
-    <a-plane position="0 0 -4" rotation="-90 0 0" width="8" height="8" material="opacity: 0.0; transparent: true"
+    <a-plane id="plane" position="0 0 -4" rotation="-90 0 0" width="8" height="8" material="opacity: 0.0; transparent: true"
       static-body></a-plane>
 
       <!-- Confetti glb credits
@@ -105,7 +106,7 @@
                   collision-filter="collisionForces: false" visible="false"
                   rotation="0 0 0" position="0 0.4 0.1" physics-collider></a-entity>
         
-        <a-entity id="3DModel" scale="1 1 1" position= "-1 -2 -4" animation-mixer></a-entity>
+        <a-entity id="3DModel" scale="1 1 1" position= "-1 -2 -4" animation-mixer disable-culling></a-entity>
 
         <a-video id="video" loop="true" visible="false" width="2" height="1.125" position="1 -1 0"></a-video>
         

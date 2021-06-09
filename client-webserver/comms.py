@@ -45,7 +45,7 @@ class Reciever:
                 self.socket = socket(AF_INET, SOCK_DGRAM)
                 self.socket.bind((addr, port))
                 self.seq_nums = dict()
-                
+        
         def __del__(self):
                 """
                         Close up connection
@@ -56,7 +56,6 @@ class Reciever:
                 """
                         Deserialize and return.
                 """
-
                 while True:
                         data, addr = self.socket.recvfrom(60000, MSG_PEEK)
                         addr = addr[0]

@@ -18,11 +18,6 @@ AFRAME.registerComponent("trigger", {
     this.ball.sceneEl.addEventListener("controllerMove", this.moveBall);
 
     this.shoot = () => {
-      // Send an http request when trigger is pressed	
-      const Http = new XMLHttpRequest();	
-      const url = '/trigger_end';	
-      Http.open("GET", url);	
-      Http.send();
       // Clear the previous feedback
       document
         .getElementById("feedback")
@@ -110,10 +105,9 @@ AFRAME.registerComponent("trigger", {
           .getElementById("feedback")
           .setAttribute("text", { value: this.feedback });
 
-        var mesh = document.getElementById("3DModel");
-		    mesh.setAttribute("visible", true);
-        mesh.setAttribute("gltf-model", "/trigger_end");
-        
+		var mesh = document.getElementById("3DModel");
+		mesh.setAttribute("gltf-model", "/trigger_end?t="+ new Date().getTime()); // so it reloads
+		
         const hoopPosition = new THREE.Vector3();
               document.getElementById("hoop").object3D.getWorldPosition(hoopPosition);
         const userPosition = new THREE.Vector3();
@@ -123,6 +117,12 @@ AFRAME.registerComponent("trigger", {
         const radian = Math.atan(ratio);
         
         mesh.object3D.rotation.set(0, radian + 0.26, 0);
+		mesh.setAttribute("visible", true);
+		// sceneEl.appendChild(entityEl);
+
+        var video = document.getElementById('video');
+        video.setAttribute("src", "/trigger_end_video?t="+ new Date().getTime()); // so it reloads
+        video.setAttribute("visible", true);
       }, 3000);
     };
     controller.addEventListener("triggerup", this.shoot);
@@ -137,6 +137,11 @@ AFRAME.registerComponent("trigger", {
 	  // remove the old person if exists
 	  var mesh = document.getElementById('3DModel');
 	  mesh.setAttribute("visible", false);
+	  
+	  var video = document.getElementById('video')
+      // video.pause();
+	  video.setAttribute("src", "");
+      video.setAttribute("visible", false);
     };
     controller.addEventListener("triggerdown", this.beginShooting);
 
